@@ -1,0 +1,626 @@
+
+:root{
+    --font-family: 'TeXGyreAdventor', sans-serif;
+    --secodary-font: "Cookie", cursive;
+    --extra-font: "Arial, Helvetica, sans-serif";
+    --primary: #FEA116;
+    --light: #F1F8FF;
+    --dark: #0F172B;
+
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box; 
+    scroll-behavior: smooth;
+   
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    background-color: var(--dark);
+}
+
+.navbar .material-icons{
+    color: var(--primary);
+    font-size: 40px;
+}
+
+.navbar #restaurant-name{
+    color: var(--primary);
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    font-weight:900;
+    font-size: 30px;
+}
+
+.navbar-nav .nav-link{
+  color: white;
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+}
+
+.navbar-nav .nav-item{
+    margin-right: 15px;
+} 
+
+.nav-link::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    background-color: var(--primary);
+    transition: all 0.4s;
+}
+
+.nav-link:hover::after{
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover{
+    color: white;
+}
+
+.navbar .btn{
+    color: white;
+    font-family: var(--extra-font);
+    font-size: 16px;
+    background-color: var(--dark);
+    border: 2px solid var(--primary);
+    transition: 0.3s ease-in;
+}
+
+.navbar .btn:hover{
+    color: white;
+    background-color: var(--primary);
+    transition: 0.3s ease-out;
+}
+
+.navbar #hamburger{
+     color: white;
+    font-size: 50px;
+    
+}
+
+.navbar-toggler:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.4) url(assets/header1.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode:darken;
+    height: 100vh;
+    z-index: -1;
+}
+
+.header-content {
+   z-index: 1000;
+}
+
+.header-content h1, p{
+    color: white;
+}
+
+
+.header-content > p:first-child{
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.header-content > p:first-child::before{
+    position: absolute;
+    top: 50%;
+    left: 0px; 
+    content: '';
+    height: 2px;
+    background-color: var(--primary);
+    width: 40px;
+}
+
+.header-content  h1{
+    font-family: var(--font-family);
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.4;  
+ 
+}
+
+.header-content p{
+    font-family:  "Cardo", serif;
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    
+}
+
+.header-content .btn{
+    border: 2px solid var(--primary);
+    color: white;
+    font-size: 20px;
+    font-weight:500;
+    border-radius: unset;
+    padding: 6px 20px;
+    border: 2px solid var(--primary);
+    transition: 0.3s ease-in;
+}
+
+.header-content .btn:hover{
+    background-color: var(--primary);
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+    .header-content > p:first-child::before {
+        left: calc(50% - 115px); /* Position the ::before element relative to the center */
+    }
+}
+
+@media (max-width: 500px) {
+    .header-content > p:first-child::before {
+        left: calc(50% - 40%); /* Position the ::before element relative to the center */
+    }
+}
+
+@media (max-width: 360px) {
+    .header-content > p:first-child::before {
+        left: calc(50% - 115px); /* Position the ::before element relative to the center */
+    }
+}
+
+/*About Us*/
+
+#aboutUs{
+   margin-top: 100px;
+}
+
+#aboutUs .text-start,
+#aboutUs .text-end{
+    transition: 0.3s ease-in;
+}
+
+#aboutUs .text-start:hover, 
+#aboutUs .text-end:hover{
+    transform: scale(1.05);
+    transition: 0.3s ease-out;
+}
+
+.about-title{
+    font-family: var(--secodary-font);
+    font-weight: bold;
+    font-size: 45px;
+    color: var(--primary);
+    position: relative;
+    animation-name: sl;
+}
+
+ .about-title::after{
+    position: absolute;
+    top: 50%;
+    left: 130px;
+    content: '';
+    height: 2px;
+    background-color: var(--primary);
+    width: 50px;
+} 
+
+.about-subtitle{
+    font-family: var(--primary-font);
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.about-subtitle span{
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.about-content{
+    font-family: var(--primary-font);
+    color: black;
+    font-weight: 100;
+    font-size: 18px;
+    text-align: justify;
+}
+
+#aboutUs .number{
+    font-family: var(--primary-font);
+    font-size: 50px;
+    font-weight: bolder;
+    color: var(--primary);
+    position: relative;
+  
+}
+ #aboutUs .number::before{
+    position: absolute;
+    content: '';
+    left: -20px;
+    height: 100%;
+    border-left: 5px solid  var(--primary);
+} 
+
+#aboutUs .btn{
+    font-family: var(--extra-font);
+    background-color: var(--primary);
+    color: white;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight:900;
+    border-radius: unset;
+    padding: 8px 40px;
+    transition: 0.3s ease-in;
+}
+
+#aboutUs .btn:hover{
+    background-color: #fbb54b;
+    transition: 0.3s ease-in-out;
+}
+
+/* Explore Menu */
+
+.explore-menu .text-center h5{
+    margin-top: 50px;
+    color: var(--primary);
+    font-family: var(--secodary-font);
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.explore-menu .text-center h5::before{
+    position: absolute;
+    top: 50%;
+    left: -60px; 
+    content: '';
+    height: 2px;
+    background-color: var(--primary);
+    width: 50px;
+}
+
+.explore-menu .text-center h5::after{
+    position: absolute;
+    top: 50%;
+    right: -60px; 
+    content: '';
+    height: 2px;
+    background-color: var(--primary);
+    width: 50px;
+}  
+
+.explore-menu .text-center p{
+    color: gray;
+    font-weight: 400;
+    margin: 0 auto;
+}
+
+.explore-menu  .btn{
+    padding: 10px 20px;
+    border-radius: unset;
+    color: white;
+    font-weight: 500;
+    border: 2px solid var(--primary);
+    background-color: var(--primary);
+    transition: 0.3s ease-in;
+}
+
+.explore-menu .menu-card:hover .btn{
+    transition: 0.3s ease-out;
+    border: 2px solid var(--primary);
+    background-color: white;
+    color: black;
+}
+
+.explore-menu .btn:hover{
+    transition: 0.3s ease-out;
+    border: 2px solid var(--primary);
+    color: black;
+}
+
+.menu-card {
+    transition: 0.3s ease-in;
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-out;
+}
+
+/*Cta Section*/
+
+.cta-section{
+    margin-top: 60px;
+    background: rgb(0, 0, 0, 0.4) url(assets/parallex-image.png) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode:darken;
+    padding: 100px 0;
+    z-index: -1;
+}
+
+.cta-section  h6{
+    font-family: var(--secodary-font);
+    color: white;
+    font-size: 30px;
+}
+
+.cta-section  h2{
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    font-family: var(--primary-font);
+}
+
+.cta-section .btn{
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    border-radius: unset;
+    padding: 10px 18px;
+    transition: 0.3s ease-in;
+}
+
+.cta-section .btn:hover{
+    color: white;
+    background-color: var(--primary);
+}
+
+/*Testimonials*/
+
+.testimonials .text-center h5{
+    color: var(--primary);
+    font-family: var(--secodary-font);
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+   
+}
+
+.testimonials .text-center h5::before{
+    position: absolute;
+    top: 50%;
+    left: -60px; 
+    content: '';
+    height: 2px;
+    background-color: var(--primary);
+    width: 50px;
+}
+
+.testimonials .text-center h5::after{
+    position: absolute;
+    top: 50%;
+    right: -60px; 
+    content: '';
+    height: 2px;
+    background-color: var(--primary);
+    width: 50px;
+}  
+
+.testimonials .text-center h2{
+    font-family: var(--primary-font);
+    color: var(--dark);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.testimonials .card{
+    border-radius: unset;
+    transition: 0.3s ease-in;
+}
+
+.testimonials .card:hover{
+    transform: scale(1.05);
+    transition: 0.3s ease-out;
+}
+
+.testimonials .card .card-body i{
+    color: var(--primary);
+    font-size: 50px;
+}
+
+.testimonials .card .card-body p{
+      color: gray;
+      margin-top: 10px;
+}
+
+.testimonials .card .card-body h4{
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.testimonials .card .card-body small{
+    font-family: var(--primary-font);
+    color: gray;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.testimonials img{
+    height: 65px;
+    width: 65px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Footer */
+
+.footer{
+    background-color: var(--dark);
+}
+
+.footer h3{
+    font-family: var(--secodary-font);
+    color: var(--primary);
+    font-size: 40px;
+    position: relative;
+}
+
+.footer h3::after{
+    position: absolute;
+    top: 50%;
+    left: 130px;
+    content: '';
+    height: 2px;
+    background-color: var(--primary);
+    width: 50px;
+}
+
+.footer .company-content a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    line-height: 1.6;
+    transition: 0.3s ease-in;
+    
+}
+
+.footer .company-content a::before{
+    content: '>';
+    color: white;
+    margin-right: 10px;
+}
+
+
+.footer .company-content a:hover{
+    letter-spacing: 1.5px;
+    transition: 0.3s ease-out;
+}
+
+.contact-item{
+    display: flex;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.footer .material-icons{
+   color: white;
+   margin-right: 8px;
+}
+
+.footer .opening-content{
+    color: white;
+
+}
+
+.footer .opening-content h5{
+    font-weight: 500;
+}
+
+.footer .opening-content p{
+    font-weight: 100;
+}
+
+.footer .newsletter-content form{
+    display: flex;
+    padding: 6px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.footer .newsletter-content form input{
+    width: 100%;
+    border: unset;
+}
+
+.footer .newsletter-content form input:focus{
+    outline: none;
+}
+
+.footer .newsletter-content form button{
+    background-color: var(--primary);
+    color: white;
+    font-weight: 500;
+    border-radius: unset;
+    margin-left: 5px;
+}
+
+.footer .newsletter-content form button:hover{
+    background-color: #ea9e2c;
+}
+
+.footer .copyright .line{
+    border-top: 1px solid rgba(256, 256, 256, 0.1);
+    padding: 25px 0;
+}
+
+.footer .copyright .links a{
+    text-decoration: none;
+    color: white;
+    margin-right: 8px;
+}
+
+.services .container .row{
+    margin-top: -80px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.services .container .item{
+    padding: 65px 75px;
+}
+
+.services .container .item span{
+    color: gray;
+    font-size: 50px;
+}
+
+.services .container .item h3{
+    font-size: 20px;
+    font-family: var(--primary-font);
+}
+
+@keyframes fadeandscaleIn {
+    0% {
+      transform: scale(.8);
+      opacity: 0; 
+    }
+    100% {
+      transform: scale(1.);
+      opacity: 1;
+    }
+}
+  
+  .fadeandscaleIn * {
+    animation: fadeandscaleIn 1s ease-out forwards;
+    opacity: 0;
+}
+  
+.fadeandscaleIn *:nth-child(1) { animation-delay: 1s;}
+.fadeandscaleIn *:nth-child(2) { animation-delay: 1.25s;}
+.fadeandscaleIn *:nth-child(3) { animation-delay: 1.5s;}
+.fadeandscaleIn *:nth-child(4) { animation-delay: 1.75s;}
+  
+
+
+
+
+
+
+
+
+
